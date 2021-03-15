@@ -1,9 +1,8 @@
 // Error route function
-const error = async (req, res) => {
+const offline = async (req, res) => {
   try {
-    res.render('error', {
+    res.render('offline', {
       pageInfo: {
-        manifest: '../manifest.json',
         style: {
           globalStyle: '../css/index.css',
           pageStyle: '../css/pages/error.css',
@@ -11,7 +10,7 @@ const error = async (req, res) => {
         scripts: {
           script: '/js/script.js',
         },
-        PageTitle: 'Page Not Found | PhotoPaint',
+        PageTitle: 'Offline | PhotoPaint',
       },
     })
   } catch (err) {
@@ -20,4 +19,4 @@ const error = async (req, res) => {
 }
 
 // Export route
-module.exports = { error }
+module.exports = { offline }
