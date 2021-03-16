@@ -2,7 +2,7 @@
 
 :root {
   --uiBlack: #161617;
-  --uiBlue: #57afff;
+  --uiBlue: #584fff;
   --uiWhite: #edf2ef;
   --uiSoftBlack: #1d1d1d;
 
@@ -166,10 +166,6 @@ input[type='submit'] {
 
 .header nav ul li a {
   line-height: 32px;
-}
-
-.header nav ul li a::before {
-  content: '\f406';
   font-family: FontAwesome;
   font-size: var(--sizeM2);
   color: var(--uiWhite);
