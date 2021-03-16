@@ -22,8 +22,7 @@ const detail = async (req, res) => {
       pageInfo: {
         manifest: '../manifest.json',
         style: {
-          globalStyle: '../css/index.css',
-          pageStyle: '../css/pages/editor.css',
+          pageStyle: 'editor.css',
         },
         scripts: {
           script: '/js/script.js',

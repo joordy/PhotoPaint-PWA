@@ -26,8 +26,7 @@ const homePost = async (req, res) => {
       },
       pageInfo: {
         style: {
-          globalStyle: 'css/index.css',
-          pageStyle: 'css/pages/home.css',
+          pageStyle: 'home.css',
         },
         scripts: {
           script: '/js/script.js',

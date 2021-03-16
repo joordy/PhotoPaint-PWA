@@ -44,6 +44,7 @@
   display: grid;
   grid-template-columns: 1fr;
   margin: 0 1rem;
+  overflow: hidden;
 }
 
 .editorPage main div section {
@@ -81,14 +82,69 @@
   font-weight: 300;
 }
 
+/* Buttons */
 .editorPage main div section:nth-of-type(1) article:nth-of-type(2) {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .editorPage main div section:nth-of-type(1) article:nth-of-type(2) button {
   padding: 0.5rem 1rem;
+}
+
+.editorPage main div section:nth-of-type(1) article:nth-of-type(2) div {
+  /* display: none; */
+  position: absolute;
+  z-index: 1;
+  top: 70px;
+  right: 0px;
+  transition: 0.3s;
+  background-color: #272727;
+  border-radius: 8px;
+  display: block;
+  height: 0px;
+  width: 0px;
+  padding: 0;
+}
+.editorPage main div section:nth-of-type(1) article:nth-of-type(2) div.active {
+  display: block;
+  padding: 1em;
+  width: 200px;
+  height: 140px;
+  box-shadow: 0 4px 8px 0 rgb(255 255 255 / 20%),
+    0 6px 20px 0 rgb(255 255 255 / 19%);
+}
+.editorPage
+  > main
+  > div
+  > section:nth-of-type(1)
+  > article:nth-of-type(2)
+  > div
+  > button {
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
+  position: relative;
+  transition: 0.3s;
+}
+
+.editorPage
+  > main
+  > div
+  > section:nth-of-type(1)
+  > article:nth-of-type(2)
+  > div.active
+  > button {
+  width: 100%;
+  height: auto;
+  visibility: visible;
+  transition-delay: 0.2s;
+  padding: 0.5em 0;
+  margin: 0.25em 0;
 }
 
 /********* Image info *********/
@@ -146,6 +202,20 @@
 
 .editorPage main > section > article a {
   width: unset;
+}
+
+@media (min-width: 700px) {
+  .editorPage main div section {
+    max-height: 80vh;
+  }
+  .editorPage main div section:nth-of-type(2) img {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 100%;
+    width: auto;
+    margin: 0 auto;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -237,7 +307,7 @@
 #filterElem {
   position: absolute;
   z-index: 10;
-  top: 65px;
+  top: 50vh;
   right: 0;
   width: 230px;
   min-height: 200px;

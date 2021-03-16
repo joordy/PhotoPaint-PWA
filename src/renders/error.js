@@ -5,8 +5,7 @@ const error = async (req, res) => {
       pageInfo: {
         manifest: '../manifest.json',
         style: {
-          globalStyle: '../css/index.css',
-          pageStyle: '../css/pages/error.css',
+          pageStyle: 'error.css',
         },
         scripts: {
           script: '/js/script.js',

@@ -7,8 +7,7 @@ const profile = async (req, res) => {
       PageTitle: 'Profile | PhotoPaint',
       pageInfo: {
         style: {
-          globalStyle: '../css/index.css',
-          pageStyle: '../css/pages/profile.css',
+          pageStyle: 'profile.css',
         },
         scripts: {
           script: '/js/script.js',

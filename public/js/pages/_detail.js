@@ -1,83 +1,38 @@
-import {
-  Article,
-  Button,
-  Div,
-  Details,
-  inputSlider,
-  Summary,
-} from '../utils/components/elements/index.js'
+import { Article, Button, Div } from '../utils/components/elements/index.js'
 import { filterElements } from '../utils/components/filterValues.js'
+import { addFilter } from '../utils/components/filter.js'
 
 export const Detail = () => {
-  // Add edit button
-  const buttonArticle = document.querySelector('#buttons')
+  // Select needed HTML elements to implement buttons
+  const btnWrapper = document.querySelector('#buttonWrapper')
+  const allBtns = document.querySelector('#buttons')
+
+  // Add option button. To open popup block
+  const options = Button('Options', 'optionBtn')
+  btnWrapper.appendChild(options)
+
+  // Add edit button. To open filter pop-up
   const editButton = Button('Edit', 'editBtn')
-  buttonArticle.appendChild(editButton)
+  allBtns.appendChild(editButton)
 
   // Add div element for filter
-  const elements = document.querySelector('#elements')
+  const elements = document.querySelector('#info')
   const article = Article('filterElem')
   const div = Div('filterWrapper')
   elements.appendChild(article)
   article.appendChild(div)
 
-  // Event for test button
-  const test = document.querySelector('#editBtn')
-  test.addEventListener('click', (event) => {
+  // Event for Edit button, to open edit popup
+  const editBtn = document.querySelector('#editBtn')
+  editBtn.addEventListener('click', (event) => {
     article.classList.toggle('active')
-    console.log('Button clicked')
   })
 
-  // Apply filter to div elem
-  const filterDiv = document.querySelector('#filterWrapper')
-  filterElements.forEach((item) => {
-    const details = Details()
-    const summary = Summary(item.filter)
-    const div = Div('slider')
-    const inputRange = inputSlider(Object.values(item))
-
-    filterDiv.appendChild(details)
-    details.appendChild(summary)
-    details.appendChild(div)
-    div.appendChild(inputRange)
+  // Event for option button
+  const optionBtn = document.querySelector('#optionBtn')
+  optionBtn.addEventListener('click', (event) => {
+    allBtns.classList.toggle('active')
   })
 
-  const firstEl = Array.from(filterDiv.childNodes)
-  firstEl[0].setAttribute('open', 'true')
-
-  const elem = Array.from(filterDiv.childNodes)
-
-  elem.forEach((targetDetail) => {
-    targetDetail.addEventListener('click', () => {
-      // Close all the details that are not targetDetail.
-      elem.forEach((detail) => {
-        if (detail !== targetDetail) {
-          detail.removeAttribute('open')
-        }
-      })
-    })
-  })
-
-  let CanVas = document.querySelector('#selectedImg')
-  let applyControls = document.querySelectorAll('input[type=range]')
-  let applyFilters = document.querySelectorAll('#applyFilter')
-  let computedFilters
-
-  // When editing, applying filters to canvas
-  applyFilters.forEach((item) => {
-    item.addEventListener('change', function () {
-      computedFilters = ''
-      applyControls.forEach((elem) => {
-        computedFilters +=
-          elem.getAttribute('data-filter') +
-          '(' +
-          elem.value +
-          elem.getAttribute('data-scale') +
-          ') '
-      })
-      CanVas.style.filter = computedFilters
-      return computedFilters
-    })
-    return computedFilters
-  })
+  addFilter()
 }
