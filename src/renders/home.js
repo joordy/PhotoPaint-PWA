@@ -13,6 +13,9 @@ const home = async (req, res) => {
     res.render('home', {
       data: response,
       pageInfo: {
+        scripts: {
+          script: '/js/script.js',
+        },
         PageTitle: 'PhotoPaint',
       },
     })

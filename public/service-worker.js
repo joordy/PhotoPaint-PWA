@@ -1,6 +1,8 @@
 const cacheName = 'myCache'
 const cacheFiles = [
   '/offline/',
+  'index.js',
+  'index.css',
   // Files to save in cached memory
   // './css/index.css',
   // './script.js',
