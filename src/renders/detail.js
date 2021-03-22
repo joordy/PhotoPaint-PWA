@@ -1,5 +1,5 @@
 // Import packages and functions
-const { fetcher } = require('./../utils/data/fetch')
+const { fetcher } = require('../utils/fetch')
 require('dotenv').config()
 
 // Detail route function

@@ -1,10 +1,11 @@
 const cacheName = 'myCache'
 const cacheFiles = [
-  // Files to save in cached memory
-  './css/index.css',
-  './script.js',
   '/offline/',
-  'https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap',
+  // Files to save in cached memory
+  // './css/index.css',
+  // './script.js',
+  // '/offline/',
+  // 'https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap',
 ]
 
 self.addEventListener('install', (event) => {
@@ -67,7 +68,6 @@ self.addEventListener('fetch', (event) => {
 const getPathName = (requestUrl) => {
   // get pathnames to receive info
   const url = new URL(requestUrl)
-  console.log(url.pathname)
   return url.pathname
 }
 

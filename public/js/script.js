@@ -9,17 +9,6 @@ if ('serviceWorker' in navigator) {
     })
 }
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker
-      .register('/service-worker.js')
-      .then((registration) =>
-        console.log(`Service worker registered ${registration}`)
-      )
-      .catch((err) => console.log(`Service worker not registered ${err}`))
-  })
-}
-
 import { Home, Detail, Profile } from './pages/index.js'
 import { LocalStorageSetup } from './utils/storage/localStorage.js'
 

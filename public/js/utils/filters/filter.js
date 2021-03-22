@@ -5,7 +5,7 @@ import {
   Details,
   inputSlider,
   Summary,
-} from '../components/elements/index.js'
+} from '../components/index.js'
 import { filterElements } from './filterValues.js'
 
 export const addFilter = () => {

@@ -1,4 +1,4 @@
-import { Image, Text } from '../utils/components/elements/index.js'
+import { Image, Text } from '../utils/components/index.js'
 
 export const Profile = () => {
   const storedImages = document.querySelector('#storedImages')
