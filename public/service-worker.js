@@ -1,11 +1,5 @@
 const cacheName = 'myCache'
-const cacheFiles = [
-  // Files to save in cached memory
-  './css/index.css',
-  './script.js',
-  '/offline/',
-  'https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap',
-]
+const cacheFiles = ['/offline/', 'bundle.js', 'index.css', '/', 'manifest.json']
 
 self.addEventListener('install', (event) => {
   // console.log('[SW] Installed')
@@ -35,7 +29,7 @@ self.addEventListener('activate', (event) => {
 })
 
 self.addEventListener('fetch', (event) => {
-  // console.log(`[SW] Fetch: ${event.request.url}`)
+  console.log(`[SW] Fetch: ${event.request.url}`)
 
   let getMethod = event.request.method === 'GET'
   let path = cacheFiles.includes(getPathName(event.request.url))
@@ -61,13 +55,18 @@ self.addEventListener('fetch', (event) => {
             .then((cache) => cache.match('/offline/'))
         })
     )
+  } else {
+    event.respondWith(
+      caches.match(event.request).then((cacheResult) => {
+        return cacheResult || fetch(event.request)
+      })
+    )
   }
 })
 
 const getPathName = (requestUrl) => {
   // get pathnames to receive info
   const url = new URL(requestUrl)
-  console.log(url.pathname)
   return url.pathname
 }
 

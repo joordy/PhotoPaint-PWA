@@ -1,3 +1,1 @@
-export const Home = () => {
-  console.log('home')
-}
+export const Home = () => {}

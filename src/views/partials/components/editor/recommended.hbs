@@ -2,7 +2,11 @@
 <article>
   {{#each recommended }}
       <a href="/image/{{this.id}}">
-        <img src="{{this.urls.regular}}" alt="">
+        <picture>
+          <source media="(min-width: 760px)" srcset="{{this.urls.regular}}">
+          <source media="(min-width: 460px)" srcset="{{this.urls.small}}">
+          <img src="{{this.urls.thumb}}" alt="{{this.alt_description}}" id="selectedImg">
+        </picture> 
       </a>
   {{/each}}
 </article>

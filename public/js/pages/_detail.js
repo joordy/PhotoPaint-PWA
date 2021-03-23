@@ -1,5 +1,4 @@
-import { Article, Button, Div } from '../utils/components/elements/index.js'
-import { filterElements } from '../utils/filters/filterValues.js'
+import { Article, Button, Div } from '../utils/components/index.js'
 import { addFilter } from '../utils/filters/filter.js'
 
 export const Detail = () => {

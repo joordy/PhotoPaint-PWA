@@ -1,5 +1,5 @@
 // Import packages and functions
-const { fetcher } = require('./../utils/data/fetch')
+const { fetcher } = require('../utils/fetch')
 require('dotenv').config()
 
 // Home route function
@@ -13,9 +13,6 @@ const home = async (req, res) => {
     res.render('home', {
       data: response,
       pageInfo: {
-        style: {
-          pageStyle: 'home.css',
-        },
         scripts: {
           script: '/js/script.js',
         },

@@ -132,6 +132,9 @@
 }
 
 .homePage header nav ul li a {
+  font-size: 0;
+}
+/* .homePage header nav ul li a {
   line-height: 32px;
   font-family: FontAwesome;
   font-size: var(--sizeM2);
@@ -139,7 +142,7 @@
   padding: 0.5rem;
   background-color: var(--uiBlue);
   border-radius: 50%;
-}
+} */
 
 /*************************************
           Homepage Main
