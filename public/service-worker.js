@@ -7,7 +7,7 @@ self.addEventListener('install', (event) => {
 
   event.waitUntil(
     caches.open(cacheName).then((cache) => {
-      console.log('[SW] caching cacheFiles')
+      // console.log('[SW] caching cacheFiles')
       return cache.addAll(cacheFiles).then(() => self.skipWaiting())
     })
   )
@@ -29,13 +29,13 @@ self.addEventListener('activate', (event) => {
 })
 
 self.addEventListener('fetch', (event) => {
-  console.log(`[SW] Fetch: ${event.request.url}`)
+  // console.log(`[SW] Fetch: ${event.request.url}`)
 
   let getMethod = event.request.method === 'GET'
   let path = cacheFiles.includes(getPathName(event.request.url))
 
   if (getMethod && path) {
-    console.log(`core get request: ${event.request.url}`)
+    // console.log(`core get request: ${event.request.url}`)
     event.respondWith(
       caches.open(cacheName).then((cache) => cache.match(event.request.url))
     )

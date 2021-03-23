@@ -17,8 +17,8 @@ router.get('/', home)
 router.get('/image/:id', detail)
 router.get('/profile', profile)
 router.get('/offline/', offline)
+// router.get('/*', error)
 router.get('/*', error)
-
 // Setting post routes
 router.post('/', urlencodedParser, homePost)
 

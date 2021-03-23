@@ -30,6 +30,7 @@
   "homepage": "https://github.com/joordy/progressive-web-apps-2021#readme",
   "devDependencies": {
     "chokidar-cli": "^2.1.0",
+    "critical": "^3.0.0",
     "eslint": "^7.21.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",

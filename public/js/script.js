@@ -20,9 +20,6 @@ const checkInternetStatus = () => {
     const text = Text('No internet connection')
     body.appendChild(div)
     div.appendChild(text)
-    console.log('offline')
-  } else {
-    console.log('online')
   }
 }
 
@@ -37,7 +34,7 @@ const init = () => {
   } else if (window.location.pathname.includes('/image/')) {
     Detail()
   } else {
-    console.log('other')
+    // console.log('other')
   }
 }
 

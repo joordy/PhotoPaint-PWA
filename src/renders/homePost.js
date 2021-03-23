@@ -25,12 +25,6 @@ const homePost = async (req, res) => {
         query: query,
       },
       pageInfo: {
-        style: {
-          pageStyle: 'home.css',
-        },
-        scripts: {
-          script: '/js/script.js',
-        },
         PageTitle: 'PhotoPaint',
       },
     })

@@ -5,7 +5,7 @@
         <picture>
           <source media="(min-width: 760px)" srcset="{{this.urls.regular}}">
           <source media="(min-width: 460px)" srcset="{{this.urls.small}}">
-          <img src="{{this.urls.thumb}}" alt="{{this.alt_description}}" id="selectedImg">
+          <img src="{{this.urls.thumb}}" alt="{{this.alt_description}}" id="selectedImg" loading="lazy">
         </picture> 
       </a>
   {{/each}}

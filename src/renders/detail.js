@@ -20,13 +20,6 @@ const detail = async (req, res) => {
       data: response,
       recommended: recommendedResponse,
       pageInfo: {
-        manifest: '../manifest.json',
-        style: {
-          pageStyle: 'editor.css',
-        },
-        scripts: {
-          script: '/js/script.js',
-        },
         PageTitle: 'Editor | PhotoPaint',
       },
     })
