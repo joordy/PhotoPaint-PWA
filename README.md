@@ -19,6 +19,145 @@ Visit: [PhotoPaint.app](https://photopaint.herokuapp.com/)
 
 ## 🚀 **Features**
 
+### **Build scripts**
+
+#### **Build**
+
+```json
+    "prebuild": "rimraf ./dist",
+    "build": "npm-run-all build:static:css build:static:js build:assets",
+    "build:static:css": "node scripts/build_css.js",
+    "build:static:js": "webpack --config webpack.config.js",
+    "build:assets": "node scripts/build_assets.js",
+```
+
+#### **Watch**
+
+```json
+    "watch": "run-p watch:*",
+    "watch:js": "chokidar 'public/js/*.js' --command 'npm run build:static:js'",
+    "watch:css": "chokidar 'public/css/*.css' && 'public/css/pages/*.css' --command 'npm run build:static:css'",
+    "watch:assets": "chokidar 'public/**/*.*' --command 'npm run build:assets'"
+```
+
+#### **Dev**
+
+```json
+    "dev": "nodemon app.js",
+```
+
+### **Manifest & Service Worker**
+
+### **Performance matters**
+
+#### **Optimize homepage images with picture sourceset**
+
+lorem
+
+#### **Optimize detailpage image with picture sourceset**
+
+lorem
+
+#### **Optimizing page with gzip**
+
+lorem
+
+#### **Lighthouse audit _with_ sourcesets**
+
+lorem
+
+#### **Lighthouse final result**
+
+lorem
+
+---
+
+## 📦 **NPM Packages**
+
+### **DevDependencies**
+
+<details>
+  <summary> Chokidar cli</summary>
+  Hello
+</details>
+<details>
+  <summary> ES-Lint</summary>
+  Hello
+</details>
+<details>
+  <summary> Gulp</summary>
+  Hello
+</details>
+<details>
+  <summary> Gulp autoprefixer</summary>
+  Hello
+</details>
+<details>
+  <summary> Gulp Clean CSS</summary>
+  Hello
+</details>
+<details>
+  <summary> Gulp Concat</summary>
+  Hello
+</details>
+<details>
+  <summary> Gulp Uglify</summary>
+  Hello
+</details>
+<details>
+  <summary> Nodemon</summary>
+  Hello
+</details>
+<details>
+  <summary> Npm Run All</summary>
+  Hello
+</details>
+<details>
+  <summary> Prettier</summary>
+  Hello
+</details>
+<details>
+  <summary> RimRaf</summary>
+  Hello
+</details>
+<details>
+  <summary> Webpack</summary>
+  Hello
+</details>
+<details>
+  <summary> Webpack-cli</summary>
+  Hello
+</details>
+
+### **Dependencies**
+
+<details>
+  <summary> Body Parser</summary>
+  Hello
+</details>
+<details>
+  <summary> Compression</summary>
+  Hello
+</details>
+<details>
+  <summary> DotEnv </summary>
+  Hello
+</details>
+<details>
+  <summary> Express</summary>
+  Hello
+</details>
+<details>
+  <summary> Express Handlebars</summary>
+  Hello
+</details>
+<details>
+  <summary> Node Fetch </summary>
+  Hello
+</details>
+
+---
+
 ## 📈 **Datasets**
 
 For this project I made use of the Unsplash API for Developers. The API gives access to the world largest open collection of high quality photos, totally free. With using different querys, like searching, popular, etc etc, the user can receive a lot of information about the image. All the available information contains:
@@ -84,7 +223,7 @@ image = {
 ### Start local dev environment
 
 ```bash
- // npm run dev
+ // npm run dev && npm run watch
 ```
 
 ### Build export
