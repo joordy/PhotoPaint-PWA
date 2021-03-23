@@ -30,7 +30,6 @@
   "homepage": "https://github.com/joordy/progressive-web-apps-2021#readme",
   "devDependencies": {
     "chokidar-cli": "^2.1.0",
-    "compression": "^1.7.4",
     "eslint": "^7.21.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
@@ -46,6 +45,7 @@
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.1",
