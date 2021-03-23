@@ -10,12 +10,26 @@ if ('serviceWorker' in navigator) {
 }
 
 import { Home, Detail, Profile } from './pages/index.js'
+import { Div, Text } from './utils/components/index.js'
 import { LocalStorageSetup } from './utils/storage/localStorage.js'
+
+const checkInternetStatus = () => {
+  if (window.navigator.onLine != true) {
+    const body = document.querySelector('body')
+    const div = Div('internetPopup')
+    const text = Text('No internet connection')
+    body.appendChild(div)
+    div.appendChild(text)
+    console.log('offline')
+  } else {
+    console.log('online')
+  }
+}
 
 const init = () => {
   // Insert local Storage
   LocalStorageSetup()
-
+  checkInternetStatus()
   if (window.location.pathname === '/') {
     Home()
   } else if (window.location.pathname === '/profile') {

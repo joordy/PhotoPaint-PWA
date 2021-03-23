@@ -2,6 +2,7 @@
 const express = require('express')
 const app = express()
 const path = require('path')
+const compression = require('compression')
 const expressHandlebars = require('express-handlebars')
 const router = require('./src/routes/router')
 const templates = path.join(__dirname, 'src/views')
@@ -25,6 +26,7 @@ app
   .set('views', templates)
   .use(express.static('dist'))
   .use(router)
+  .use(compression())
 
 // Launch application
 app.listen(port, function () {

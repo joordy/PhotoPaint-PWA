@@ -1,1 +1,4 @@
-<img src="{{data.urls.full}}" alt="{{data.alt_description}}" id="selectedImg">
+<picture>
+  <source media="(min-width: 760px)" srcset="{{data.urls.full}}">
+  <img src="{{data.urls.regular}}" alt="{{data.alt_description}}" id="selectedImg">
+</picture> 

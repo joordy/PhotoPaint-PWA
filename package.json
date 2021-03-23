@@ -14,8 +14,8 @@
     "build:assets": "node scripts/build_assets.js",
     "watch": "run-p watch:*",
     "watch:js": "chokidar 'public/js/*.js' --command 'npm run build:static:js'",
-    "watch:css": "chokidar 'public/css/*.css' --command 'npm run build:static:css'",
-    "watch:assets": "chokidar 'public/**/*.*' --command 'npm run build:static:assets'"
+    "watch:css": "chokidar 'public/css/*.css' && 'public/css/pages/*.css' --command 'npm run build:static:css'",
+    "watch:assets": "chokidar 'public/**/*.*' --command 'npm run build:assets'"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
   "homepage": "https://github.com/joordy/progressive-web-apps-2021#readme",
   "devDependencies": {
     "chokidar-cli": "^2.1.0",
+    "compression": "^1.7.4",
     "eslint": "^7.21.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",

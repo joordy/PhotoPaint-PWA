@@ -27,7 +27,6 @@ export const addFilter = () => {
   })
 
   const firstEl = Array.from(editor.childNodes)
-  console.log(firstEl)
   firstEl[0].setAttribute('open', 'true')
 
   const elem = Array.from(editor.childNodes)
@@ -68,8 +67,7 @@ export const addFilter = () => {
 
   const saveBtn = document.querySelector('#saveBtn')
   saveBtn.addEventListener('click', (event) => {
-    console.log('saved')
-    popUp()
+    popUp('Image saved to profile.')
     let oldItems = JSON.parse(localStorage.getItem('images')) || []
     let newItem = {
       image: document.querySelector('#selectedImg').currentSrc,
@@ -77,38 +75,34 @@ export const addFilter = () => {
     }
     oldItems.push(newItem)
     localStorage.setItem('images', JSON.stringify(oldItems))
-    console.log(newItem)
   })
 
   const downBtn = document.querySelector('#downBtn')
   downBtn.addEventListener('click', (event) => {
-    console.log('download')
+    popUp('Image downloading.')
   })
 }
 
-const popUp = () => {
+const popUp = (popupText) => {
+  const body = document.querySelector('body')
+  body.style.overflow = 'hidden'
+
   const main = document.querySelector('main')
+  const bkgrnd = Div('backblur')
   const div = Div('popup')
-  const text = Text('Image saved to profile.')
-  const button = Button('X', 'closePopup')
-  main.appendChild(div)
+  const text = Text(popupText)
+  const button = Button('close', 'closePopup')
+
+  main.appendChild(bkgrnd)
+  bkgrnd.appendChild(div)
   div.appendChild(text)
   div.appendChild(button)
 
   const closePopup = document.querySelector('#closePopup')
   closePopup.addEventListener('click', (event) => {
-    const elem = document.querySelector('#popup')
-    elem.parentNode.removeChild(elem)
+    const body = document.querySelector('body')
+    body.style.overflow = 'unset'
+    const backblur = document.querySelector('#backblur')
+    backblur.remove()
   })
 }
-
-// const buttons = document.querySelector('#buttons')
-
-// const editButton = Button('Edit', 'editBtn')
-
-// buttons.appendChild(editButton)
-
-// const test = document.querySelector('#editBtn')
-// test.addEventListener('click', (event) => {
-//   console.log('test')
-// })
