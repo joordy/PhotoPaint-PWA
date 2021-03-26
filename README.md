@@ -2,12 +2,7 @@
 
 ## 🔦 **Description**
 
-In this course we will convert the client side web application previously made Web App From Scratch into a server side rendered application. We also add functionalities based on the Service Worker and turn the application into a Progressive Web App. Ultimately we are going to implement a series of optimisations to improve the performance of the application.
-
-Learning goals
-You understand the difference between client side and server side rendering and you can apply server side rendering in your application
-You understand how a Service Worker works and you can implement it in your application.
-You understand how the critical render path works and how you can optimize it for a better runtime and / or perceived performance.
+In this course I'll learn how to create a Progressive Web Application from scratch. I use client-sideHTML, CSS and Vanilla JavaScript, together with a NodeJS server with the Express framework and express-handlebars templating language. With the usage of these languages, we create a complete application with offline-usages. The data is retrieved from a self-selected API and displayed inside the interface.
 
 ---
 
@@ -52,7 +47,7 @@ Visit: [PhotoPaint.app](https://photopaint.herokuapp.com/)
 
 #### **Optimize homepage images with picture sourceset**
 
-lorem
+![Optimize homepage images with picture sourceset](https://user-images.githubusercontent.com/48051912/112610356-e2c93e00-8e1c-11eb-903f-f3c4edd8f68d.png)
 
 #### **Optimize detailpage image with picture sourceset**
 
