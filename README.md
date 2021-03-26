@@ -6,7 +6,7 @@ In this course I'll learn how to create a Progressive Web Application from scrat
 
 ---
 
-![Frame 18](https://user-images.githubusercontent.com/48051912/112618017-fcbb4e80-8e25-11eb-8e0e-0b41f056e83b.png)
+![Wireframes](https://user-images.githubusercontent.com/48051912/112618251-3a1fdc00-8e26-11eb-88b3-67b009517ca5.png)
 
 ## 🌐 **Live link**
 
