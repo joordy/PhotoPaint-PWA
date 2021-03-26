@@ -2,14 +2,11 @@
 
 ## 🔦 **Description**
 
-In this course we will convert the client side web application previously made Web App From Scratch into a server side rendered application. We also add functionalities based on the Service Worker and turn the application into a Progressive Web App. Ultimately we are going to implement a series of optimisations to improve the performance of the application.
-
-Learning goals
-You understand the difference between client side and server side rendering and you can apply server side rendering in your application
-You understand how a Service Worker works and you can implement it in your application.
-You understand how the critical render path works and how you can optimize it for a better runtime and / or perceived performance.
+In this course I'll learn how to create a Progressive Web Application from scratch. I use client-sideHTML, CSS and Vanilla JavaScript, together with a NodeJS server with the Express framework and express-handlebars templating language. With the usage of these languages, we create a complete application with offline-usages. The data is retrieved from a self-selected API and displayed inside the interface.
 
 ---
+
+![Wireframes](https://user-images.githubusercontent.com/48051912/112618251-3a1fdc00-8e26-11eb-88b3-67b009517ca5.png)
 
 ## 🌐 **Live link**
 
@@ -18,6 +15,166 @@ Visit: [PhotoPaint.app](https://photopaint.herokuapp.com/)
 ---
 
 ## 🚀 **Features**
+
+### **Build scripts**
+
+#### **Build**
+
+```json
+    "prebuild": "rimraf ./dist",
+    "build": "npm-run-all build:static:css build:static:js build:assets",
+    "build:static:css": "node scripts/build_css.js",
+    "build:static:js": "webpack --config webpack.config.js",
+    "build:assets": "node scripts/build_assets.js",
+```
+
+#### **Watch**
+
+```json
+    "watch": "run-p watch:*",
+    "watch:js": "chokidar 'public/js/*.js' --command 'npm run build:static:js'",
+    "watch:css": "chokidar 'public/css/*.css' && 'public/css/pages/*.css' --command 'npm run build:static:css'",
+    "watch:assets": "chokidar 'public/**/*.*' --command 'npm run build:assets'"
+```
+
+#### **Dev**
+
+```json
+    "dev": "nodemon app.js",
+```
+
+### **Manifest & Service Worker**
+
+### **Performance matters**
+
+#### **Optimizing with picture source-sets**
+
+To optimize all the images in my web application, I used the picture element of HTML, and added the lazy loading attribute. The advantage of this is that a suitable image is loaded at the correct resolution. For example, it is of little use to load a full-HD image for mobile, if the viewport is only 400px wide.
+
+On the homepage, it had little effect, with a minimum gain of 50ms. However, it has had a lot of effect on the detail page, taking more than 1 full second off the ** load **, saving 5MB in terms of resources retrieved
+
+```html
+<picture>
+  <source media="(min-width: 760px)" srcset="{{this.src.regular}}" />
+  <source media="(min-width: 460px)" srcset="{{this.src.small}}" />
+  <img src="{{this.src}}" alt="{{this.alt}}" id="" loading="lazy" />
+</picture>
+```
+
+**Optimize homepage images with picture sourceset**
+
+![Optimize homepage images with picture sourceset](https://user-images.githubusercontent.com/48051912/112612494-45233e00-8e1f-11eb-9267-450498c718dc.png)
+
+**Optimize detailpage image with picture sourceset**
+
+![Optimize Detail page image  with picture sourceset](https://user-images.githubusercontent.com/48051912/112611345-fd4fe700-8e1d-11eb-853b-bece4897535d.png)
+
+#### **Optimizing page with gzip**
+
+With the usage of the NPM package [compression](https://www.npmjs.com/package/compression) will it compress all the rendered files from the server. For example my CSS and JS bundles will be compressed and send to the client.
+
+It gained small improvements on the home-page, but again a blazing fast render on the detail page.
+
+```js
+const compression = require('compression')
+
+app.use(compression())
+```
+
+![Optimizing page with gzip](https://user-images.githubusercontent.com/48051912/112613718-b0214480-8e20-11eb-9992-1318c0da3659.png)
+
+#### **Lighthouse audit optimizing result**
+
+In the end I started to get my score in lighthouse as high as possible. By running different tests and adjusting the feedback given, the score has improved little by little to the below.
+
+![Lighthouse audit](https://user-images.githubusercontent.com/48051912/112616907-9255de80-8e24-11eb-9397-370509f67448.png)
+
+---
+
+## 📦 **NPM Packages**
+
+### **DevDependencies**
+
+<!-- <details>
+  <summary> Chokidar cli</summary>
+  Hello
+</details>
+<details>
+  <summary> ES-Lint</summary>
+  Hello
+</details>
+<details>
+  <summary> Gulp</summary>
+  Hello
+</details>
+<details>
+  <summary> Gulp autoprefixer</summary>
+  Hello
+</details>
+<details>
+  <summary> Gulp Clean CSS</summary>
+  Hello
+</details>
+<details>
+  <summary> Gulp Concat</summary>
+  Hello
+</details>
+<details>
+  <summary> Gulp Uglify</summary>
+  Hello
+</details>
+<details>
+  <summary> Nodemon</summary>
+  Hello
+</details>
+<details>
+  <summary> Npm Run All</summary>
+  Hello
+</details>
+<details>
+  <summary> Prettier</summary>
+  Hello
+</details>
+<details>
+  <summary> RimRaf</summary>
+  Hello
+</details>
+<details>
+  <summary> Webpack</summary>
+  Hello
+</details>
+<details>
+  <summary> Webpack-cli</summary>
+  Hello
+</details>
+<details>
+  <summary> Body Parser</summary>
+  Hello
+</details>
+<details>
+  <summary> Compression</summary>
+  Hello
+</details>
+<details>
+  <summary> DotEnv </summary>
+  Hello
+</details>
+<details>
+  <summary> Express</summary>
+  Hello
+</details>
+<details>
+  <summary> Express Handlebars</summary>
+  Hello
+</details>
+<details>
+  <summary> Node Fetch </summary>
+  Hello
+</details> -->
+
+### **Dependencies**
+
+---
 
 ## 📈 **Datasets**
 
@@ -84,7 +241,7 @@ image = {
 ### Start local dev environment
 
 ```bash
- // npm run dev
+ // npm run dev && npm run watch
 ```
 
 ### Build export
@@ -102,8 +259,8 @@ image = {
 To make APA:
 
 - https://koderplace.com/code-samples/255/how-to-change-the-location-of-views-in-express-handlebars
-
----
+- https://docs.divio.com/en/latest/how-to/node-express-force-https/
+- ***
 
 ## 🔐 **License**
 

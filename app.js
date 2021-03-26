@@ -3,7 +3,6 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const compression = require('compression')
-// const critical = require('critical')
 const expressHandlebars = require('express-handlebars')
 const router = require('./src/routes/router')
 const templates = path.join(__dirname, 'src/views')
@@ -33,7 +32,6 @@ app
     if (process.env.NODE_ENV != 'development' && !request.secure) {
       return response.redirect('https://' + request.headers.host + request.url)
     }
-
     next()
   })
 
