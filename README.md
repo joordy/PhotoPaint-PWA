@@ -51,7 +51,7 @@ Visit: [PhotoPaint.app](https://photopaint.herokuapp.com/)
 
 #### **Optimize detailpage image with picture sourceset**
 
-lorem
+![Optimize Detail page image  with picture sourceset](https://user-images.githubusercontent.com/48051912/112610747-53705a80-8e1d-11eb-8789-3172ef4277f4.png)
 
 #### **Optimizing page with gzip**
 
