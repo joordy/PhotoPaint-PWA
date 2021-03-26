@@ -47,19 +47,19 @@ Visit: [PhotoPaint.app](https://photopaint.herokuapp.com/)
 
 #### **Optimize homepage images with picture sourceset**
 
-![Optimize homepage images with picture sourceset](https://user-images.githubusercontent.com/48051912/112610356-e2c93e00-8e1c-11eb-903f-f3c4edd8f68d.png)
+![Optimize homepage images with picture sourceset](https://user-images.githubusercontent.com/48051912/112612494-45233e00-8e1f-11eb-9267-450498c718dc.png)
 
 #### **Optimize detailpage image with picture sourceset**
 
-![Optimize Detail page image  with picture sourceset](https://user-images.githubusercontent.com/48051912/112610747-53705a80-8e1d-11eb-8789-3172ef4277f4.png)
+![Optimize Detail page image  with picture sourceset](https://user-images.githubusercontent.com/48051912/112611345-fd4fe700-8e1d-11eb-853b-bece4897535d.png)
 
 #### **Optimizing page with gzip**
 
-lorem
+![Optimizing page with gzip](https://user-images.githubusercontent.com/48051912/112613718-b0214480-8e20-11eb-9992-1318c0da3659.png)
 
-#### **Lighthouse audit _with_ sourcesets**
+#### **Lighthouse audit optimizing result**
 
-lorem
+![Lighthouse audit](https://user-images.githubusercontent.com/48051912/112614365-77ce3600-8e21-11eb-8ca8-4a4234b8341d.png)
 
 #### **Lighthouse final result**
 
