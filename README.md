@@ -75,22 +75,36 @@ Visit: [PhotoPaint.app](https://photopaint.herokuapp.com/)
 </details>
 
 <details style="margin: 1em 0;">
-  <summary style="margin: 1em 0;">Optimizing with picture source-sets</summary>
+  <summary style="margin: 1em 0;">Optimizing page with gzip</summary>
 
   <div style="margin: 1em 0;">
+    With the usage of the NPM package [compression](https://www.npmjs.com/package/compression) will it compress all the rendered files from the server. For example my CSS and JS bundles will be compressed and send to the client.
+
+    It gained small improvements on the home-page, but again a blazing fast render on the detail page.
+
+    ```js
+    const compression = require('compression')
+
+    app.use(compression())
+    ```
+
+    ![Optimizing page with gzip](https://user-images.githubusercontent.com/48051912/112613718-b0214480-8e20-11eb-9992-1318c0da3659.png)
 
   </div>
 </details>
 
 <details style="margin: 1em 0;">
-  <summary style="margin: 1em 0;">Optimizing with picture source-sets</summary>
+  <summary style="margin: 1em 0;">Lighthouse audit optimizing result</summary>
 
   <div style="margin: 1em 0;">
+    In the end I started to get my score in lighthouse as high as possible. By running different tests and adjusting the feedback given, the score has improved little by little to the below.
+
+    ![Lighthouse audit](https://user-images.githubusercontent.com/48051912/112616907-9255de80-8e24-11eb-9397-370509f67448.png)
 
   </div>
 </details>
 
-#### **Optimizing page with gzip**
+<!-- #### **Optimizing page with gzip**
 
 With the usage of the NPM package [compression](https://www.npmjs.com/package/compression) will it compress all the rendered files from the server. For example my CSS and JS bundles will be compressed and send to the client.
 
@@ -108,7 +122,7 @@ app.use(compression())
 
 In the end I started to get my score in lighthouse as high as possible. By running different tests and adjusting the feedback given, the score has improved little by little to the below.
 
-![Lighthouse audit](https://user-images.githubusercontent.com/48051912/112616907-9255de80-8e24-11eb-9397-370509f67448.png)
+![Lighthouse audit](https://user-images.githubusercontent.com/48051912/112616907-9255de80-8e24-11eb-9397-370509f67448.png) -->
 
 ---
 
