@@ -94,15 +94,10 @@ Visit: [PhotoPaint.app](https://photopaint.herokuapp.com/)
 <details style="margin: 1em 0;">
   <summary style="margin: 1em 0;">Lighthouse audit optimizing result</summary>
 
-  <div style="margin: 1em 0;">
-    <p>
-      In the end I started to get my score in lighthouse as high as possible. By running different tests and adjusting the feedback given, the score has improved little by little to the below.
-    </p>
+    In the end I started to get my score in lighthouse as high as possible. By running different tests and adjusting the feedback given, the score has improved little by little to the below.
 
-    <img src="https://user-images.githubusercontent.com/48051912/112616907-9255de80-8e24-11eb-9397-370509f67448.png" alt="Lighthouse audit" />
-    <!-- ![Lighthouse audit](https://user-images.githubusercontent.com/48051912/112616907-9255de80-8e24-11eb-9397-370509f67448.png) -->
+    ![Lighthouse audit](https://user-images.githubusercontent.com/48051912/112616907-9255de80-8e24-11eb-9397-370509f67448.png)
 
-  </div>
 </details>
 
 <!-- #### **Optimizing page with gzip**
