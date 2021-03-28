@@ -78,9 +78,7 @@ Visit: [PhotoPaint.app](https://photopaint.herokuapp.com/)
   <summary style="margin: 1em 0;">Optimizing page with gzip</summary>
 
   <div style="margin: 1em 0;">
-    With the usage of the NPM package [compression](https://www.npmjs.com/package/compression) will it compress all the rendered files from the server. For example my CSS and JS bundles will be compressed and send to the client.
-
-    It gained small improvements on the home-page, but again a blazing fast render on the detail page.
+    With the usage of the NPM package [compression](https://www.npmjs.com/package/compression) will it compress all the rendered files from the server. For example my CSS and JS bundles will be compressed and send to the client. It gained small improvements on the home-page, but again a blazing fast render on the detail page.
 
     ```js
     const compression = require('compression')
