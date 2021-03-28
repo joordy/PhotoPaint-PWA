@@ -50,10 +50,9 @@ Visit: [PhotoPaint.app](https://photopaint.herokuapp.com/)
 <details style="margin: 1em 0;">
   <summary style="margin: 1em 0;">Optimizing with picture source-sets</summary>
 
-  <div style="margin: 1em 0;">
-    To optimize all the images in my web application, I used the picture element of HTML, and added the lazy loading attribute. The advantage of this is that a suitable image is loaded at the correct resolution. For example, it is of little use to load a full-HD image for mobile, if the viewport is only 400px wide.
+To optimize all the images in my web application, I used the picture element of HTML, and added the lazy loading attribute. The advantage of this is that a suitable image is loaded at the correct resolution. For example, it is of little use to load a full-HD image for mobile, if the viewport is only 400px wide.
 
-    On the homepage, it had little effect, with a minimum gain of 50ms. However, it has had a lot of effect on the detail page, taking more than 1 full second off the ** load **, saving 5MB in terms of resources retrieved
+On the homepage, it had little effect, with a minimum gain of 50ms. However, it has had a lot of effect on the detail page, taking more than 1 full second off the ** load **, saving 5MB in terms of resources retrieved
 
 ```html
 <picture>
@@ -71,32 +70,29 @@ Visit: [PhotoPaint.app](https://photopaint.herokuapp.com/)
 
 ![Optimize Detail page image  with picture sourceset](https://user-images.githubusercontent.com/48051912/112611345-fd4fe700-8e1d-11eb-853b-bece4897535d.png)
 
-  </div>
 </details>
 
 <details style="margin: 1em 0;">
   <summary style="margin: 1em 0;">Optimizing page with gzip</summary>
 
-  <div style="margin: 1em 0;">
-    With the usage of the NPM package [compression](https://www.npmjs.com/package/compression) will it compress all the rendered files from the server. For example my CSS and JS bundles will be compressed and send to the client. It gained small improvements on the home-page, but again a blazing fast render on the detail page.
+With the usage of the NPM package [compression](https://www.npmjs.com/package/compression) will it compress all the rendered files from the server. For example my CSS and JS bundles will be compressed and send to the client. It gained small improvements on the home-page, but again a blazing fast render on the detail page.
 
-    ```js
-    const compression = require('compression')
+```js
+const compression = require('compression')
 
-    app.use(compression())
-    ```
+app.use(compression())
+```
 
-    ![Optimizing page with gzip](https://user-images.githubusercontent.com/48051912/112613718-b0214480-8e20-11eb-9992-1318c0da3659.png)
+![Optimizing page with gzip](https://user-images.githubusercontent.com/48051912/112613718-b0214480-8e20-11eb-9992-1318c0da3659.png)
 
-  </div>
 </details>
 
 <details style="margin: 1em 0;">
   <summary style="margin: 1em 0;">Lighthouse audit optimizing result</summary>
 
-    In the end I started to get my score in lighthouse as high as possible. By running different tests and adjusting the feedback given, the score has improved little by little to the below.
+In the end I started to get my score in lighthouse as high as possible. By running different tests and adjusting the feedback given, the score has improved little by little to the below.
 
-    ![Lighthouse audit](https://user-images.githubusercontent.com/48051912/112616907-9255de80-8e24-11eb-9397-370509f67448.png)
+![Lighthouse audit](https://user-images.githubusercontent.com/48051912/112616907-9255de80-8e24-11eb-9397-370509f67448.png)
 
 </details>
 
