@@ -47,11 +47,13 @@ Visit: [PhotoPaint.app](https://photopaint.herokuapp.com/)
 
 ### **Performance matters**
 
-#### **Optimizing with picture source-sets**
+<details style="margin: 1em 0;">
+  <summary style="margin: 1em 0;">Optimizing with picture source-sets</summary>
 
-To optimize all the images in my web application, I used the picture element of HTML, and added the lazy loading attribute. The advantage of this is that a suitable image is loaded at the correct resolution. For example, it is of little use to load a full-HD image for mobile, if the viewport is only 400px wide.
+  <div style="margin: 1em 0;">
+    To optimize all the images in my web application, I used the picture element of HTML, and added the lazy loading attribute. The advantage of this is that a suitable image is loaded at the correct resolution. For example, it is of little use to load a full-HD image for mobile, if the viewport is only 400px wide.
 
-On the homepage, it had little effect, with a minimum gain of 50ms. However, it has had a lot of effect on the detail page, taking more than 1 full second off the ** load **, saving 5MB in terms of resources retrieved
+    On the homepage, it had little effect, with a minimum gain of 50ms. However, it has had a lot of effect on the detail page, taking more than 1 full second off the ** load **, saving 5MB in terms of resources retrieved
 
 ```html
 <picture>
@@ -68,6 +70,25 @@ On the homepage, it had little effect, with a minimum gain of 50ms. However, it 
 **Optimize detailpage image with picture sourceset**
 
 ![Optimize Detail page image  with picture sourceset](https://user-images.githubusercontent.com/48051912/112611345-fd4fe700-8e1d-11eb-853b-bece4897535d.png)
+
+  </div>
+</details>
+
+<details style="margin: 1em 0;">
+  <summary style="margin: 1em 0;">Optimizing with picture source-sets</summary>
+
+  <div style="margin: 1em 0;">
+
+  </div>
+</details>
+
+<details style="margin: 1em 0;">
+  <summary style="margin: 1em 0;">Optimizing with picture source-sets</summary>
+
+  <div style="margin: 1em 0;">
+
+  </div>
+</details>
 
 #### **Optimizing page with gzip**
 
@@ -241,13 +262,13 @@ image = {
 ### Start local dev environment
 
 ```bash
- // npm run dev && npm run watch
+ npm run dev && npm run watch
 ```
 
-### Build export
+### Build export for deployment
 
 ```bash
- // npm run build
+ npm run build
 ```
 
 ---
