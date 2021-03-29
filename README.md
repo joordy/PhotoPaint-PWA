@@ -2,7 +2,7 @@
 
 ## 🔦 **Description**
 
-In this course I'll learn how to create a Progressive Web Application from scratch. I use client-sideHTML, CSS and Vanilla JavaScript, together with a NodeJS server with the Express framework and express-handlebars templating language. With the usage of these languages, we create a complete application with offline-usages. The data is retrieved from a self-selected API and displayed inside the interface.
+In this course I'll learn how to create a Progressive Web Application from scratch. I use client-side HTML, CSS and Vanilla JavaScript, together with a NodeJS server with the Express framework and Express-Handlebars templating language. With the usage of these languages, we create a complete application with offline-usages. The data is retrieved from a self-selected API and displayed inside the interface.
 
 ---
 
