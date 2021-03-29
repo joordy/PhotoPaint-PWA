@@ -18,32 +18,68 @@ Visit: [PhotoPaint.app](https://photopaint.herokuapp.com/)
 
 ### **Build scripts**
 
-#### **Build**
+<!-- #### **Build** -->
+
+The advantage of using NPM scripts is that a large part of your work can be automated. There are several ways to make use of this. Grunt, Gulp, PostCSS and many other NPM packages can contribute to this. With the NPM scripts you can convert the SCSS to regular CSS, so that the server can read it and send it to the client, bundle Javascript files together so that you can work in modules, and of course all files can be minified.
+
+<details style="margin: 1em 0;">
+  <summary style="margin: 1em 0;">Build</summary>
+
+Inside my project I make use of three different build-scripts. The build scripts bundles my code, minify them and store them inside a `dist` folder. The `dist` folder will be used for the client. All my client-side code will be used in here, like my CSS, JavaScript, Service Worker, Manifest & all the assets. With the `prebuild` command I remove the current existing `dist` folder. The `build` command performs the three tasks, and stores all the needed files inside the `dist` folder.
 
 ```json
-    "prebuild": "rimraf ./dist",
-    "build": "npm-run-all build:static:css build:static:js build:assets",
-    "build:static:css": "node scripts/build_css.js",
-    "build:static:js": "webpack --config webpack.config.js",
-    "build:assets": "node scripts/build_assets.js",
+"prebuild": "rimraf ./dist",
+"build": "npm-run-all build:static:css build:static:js build:assets",
+"build:static:css": "node scripts/build_css.js",
+"build:static:js": "webpack --config webpack.config.js",
+"build:assets": "node scripts/build_assets.js",
 ```
 
-#### **Watch**
+</details>
+
+<details style="margin: 1em 0;">
+  <summary style="margin: 1em 0;">Watch</summary>
+
+To be able to watch all the files in development mode, without using the `build` command every time during the development process, the `watch` command will be able to help you. By using this script, the `chokidar` package will watch all the files on your localhost, and update these files as soon as a change is made. The single `watch` command provides all the code that will be changed inside the JavaScript, CSS or assets folder.
 
 ```json
-    "watch": "run-p watch:*",
-    "watch:js": "chokidar 'public/js/*.js' --command 'npm run build:static:js'",
-    "watch:css": "chokidar 'public/css/*.css' && 'public/css/pages/*.css' --command 'npm run build:static:css'",
-    "watch:assets": "chokidar 'public/**/*.*' --command 'npm run build:assets'"
+"watch": "run-p watch:*",
+"watch:js": "chokidar 'public/js/*.js' --command 'npm run build:static:js'",
+"watch:css": "chokidar 'public/css/*.css' && 'public/css/pages/*.css' --command 'npm run build:static:css'",
+"watch:assets": "chokidar 'public/**/*.*' --command 'npm run build:assets'"
 ```
 
-#### **Dev**
+</details>
+
+<details style="margin: 1em 0;">
+  <summary style="margin: 1em 0;">Dev</summary>
+
+To open the application in development mode, you will need to access the `dev` command. This uses the nodemon package, so when there will be a file changed for the server, this will automatically refresh the server. This makes all changes on the server immediately visible. When the application is deployed, for example to Heroku, the host will provide the `start` script, to start the server when visiting this project.
 
 ```json
-    "dev": "nodemon app.js",
+"start": "node app.js",
+"dev": "nodemon app.js",
 ```
+
+</details>
 
 ### **Manifest & Service Worker**
+
+For this project, the goal was to convert our WAFS application into a Progressive Web App. For this it is important that the application can be used offline if necessary. A Service-Worker & Manifest are important here.
+
+<details style="margin: 1em 0;">
+  <summary style="margin: 1em 0;">Manifest</summary>
+
+A `manifest.json` is a file that passes information to the browser about your Progressive Web Application, and how it should behave when installed on a desktop or mobile. A `manifest` file must include a name, icon and start path.
+
+</details>
+
+<details style="margin: 1em 0;">
+  <summary style="margin: 1em 0;">Service Worker</summary>
+
+A Service Worker ensures that you as a developer can manage / manipulate **network** traffic, **cache** files, add push **notifications**, and so on.
+
+</details>
 
 ### **Performance matters**
 
@@ -122,132 +158,28 @@ In the end I started to get my score in lighthouse as high as possible. By runni
 
 ### **DevDependencies**
 
-<!-- <details>
-  <summary> Chokidar cli</summary>
-  Hello
-</details>
-<details>
-  <summary> ES-Lint</summary>
-  Hello
-</details>
-<details>
-  <summary> Gulp</summary>
-  Hello
-</details>
-<details>
-  <summary> Gulp autoprefixer</summary>
-  Hello
-</details>
-<details>
-  <summary> Gulp Clean CSS</summary>
-  Hello
-</details>
-<details>
-  <summary> Gulp Concat</summary>
-  Hello
-</details>
-<details>
-  <summary> Gulp Uglify</summary>
-  Hello
-</details>
-<details>
-  <summary> Nodemon</summary>
-  Hello
-</details>
-<details>
-  <summary> Npm Run All</summary>
-  Hello
-</details>
-<details>
-  <summary> Prettier</summary>
-  Hello
-</details>
-<details>
-  <summary> RimRaf</summary>
-  Hello
-</details>
-<details>
-  <summary> Webpack</summary>
-  Hello
-</details>
-<details>
-  <summary> Webpack-cli</summary>
-  Hello
-</details>
-<details>
-  <summary> Body Parser</summary>
-  Hello
-</details>
-<details>
-  <summary> Compression</summary>
-  Hello
-</details>
-<details>
-  <summary> DotEnv </summary>
-  Hello
-</details>
-<details>
-  <summary> Express</summary>
-  Hello
-</details>
-<details>
-  <summary> Express Handlebars</summary>
-  Hello
-</details>
-<details>
-  <summary> Node Fetch </summary>
-  Hello
-</details> -->
+- [Chokidar-CLI](https://www.npmjs.com/package/chokidar-cli)
+- [ES-Linter](https://www.npmjs.com/package/eslint)
+- [Prettier](https://www.npmjs.com/package/prettier)
+- [Gulp](https://www.npmjs.com/package/gulp)
+- [Gulp Autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer)
+- [Gulp Clean CSS](https://www.npmjs.com/package/gulp-clean-css)
+- [Gulp concat](https://www.npmjs.com/package/gulp-concat)
+- [Gulp uglify](https://www.npmjs.com/package/gulp-uglify)
+- [Nodemon](https://www.npmjs.com/package/nodemon)
+- [NPM run all](https://www.npmjs.com/package/npm-run-all)
+- [RimRaf](https://www.npmjs.com/package/rimraf)
+- [Webpack](https://www.npmjs.com/package/webpack)
+- [Webpack-CLI](https://www.npmjs.com/package/webpack-cli)
 
 ### **Dependencies**
 
----
-
-## 📈 **Datasets**
-
-For this project I made use of the Unsplash API for Developers. The API gives access to the world largest open collection of high quality photos, totally free. With using different querys, like searching, popular, etc etc, the user can receive a lot of information about the image. All the available information contains:
-
-### Used endpoints
-
-To make use of my application I've used two differend
-
-- `https://api.unsplash.com/photos/?client_id=${API_KEY}&per_page=33&order_by=popular`
-- `https://api.unsplash.com/search/photos/?client_id=${API_KEY}&query=${SEARCH_QUERY}&per_page=33&order_by=popular `
-- `https://api.unsplash.com/photos/1gLdTsX3_70?client_id=${API_KEY}`
-
-### API Response
-
-After requesting the API you will receive an object with a lot of information about the photos. Below is described what all information means.
-
-```js
-image = {
-  alt_description:  ,           // Second description
-  blur_hash: ,                  // Hashed ID
-  categories: ,                 // Image categories
-  color: ,                      // Color ?
-  created_at: ,                 // Created timestamp
-  current_user_collections: [], // The current user collection
-  description: ,                // Image description
-  downloads: ,                  // Total downloads
-  exif: ,                       // Camera Settings
-  height: ,                     // Image height in PX
-  id: ,                         // Image ID
-  liked_by_user: ,              // Liked by user
-  likes: ,                      // Total likes
-  links: ,                      // Links to download information
-  location: ,                   // Location of image
-  meta: ,                       // Meta information
-  promoted_at: ,                // Promoted timestamp
-  related_collections: ,        // Related collections with this image
-  sponsorship: ,                // Sponsored image
-  tags: ,                       // Image tags
-  updated_at: ,                 // Updated timestamp
-  urls: {},                     // All image URLS, thumbs, small, regular, full, raw
-  user: ,                       // Information about user
-  views: ,                      // Total image views
-  width: ,                      // Image width in PX
-}
-```
+- [Body Parser](https://www.npmjs.com/package/body-parser)
+- [Compression](https://www.npmjs.com/package/compression)
+- [DotEnv](npmjs.com/package/dotenv)
+- [Express](https://www.npmjs.com/package/express)
+- [Express Handlebars](https://www.npmjs.com/package/express-handlebars)
+- [Node-Fetch](https://www.npmjs.com/package/node-fetch)
 
 ---
 
@@ -279,15 +211,67 @@ image = {
 
 ---
 
+## 📈 **Datasets**
+
+For this project I made use of the Unsplash API for Developers. The API gives access to the world largest open collection of high quality photos, totally free. With using different querys, like searching, popular, etc etc, the user can receive a lot of information about the image. All the available information contains:
+
+### Used endpoints
+
+To make use of my application I've used two differend
+
+- `https://api.unsplash.com/photos/?client_id=${API_KEY}&per_page=33&order_by=popular`
+- `https://api.unsplash.com/search/photos/?client_id=${API_KEY}&query=${SEARCH_QUERY}&per_page=33&order_by=popular `
+- `https://api.unsplash.com/photos/1gLdTsX3_70?client_id=${API_KEY}`
+
+### API Response
+
+After requesting the API you will receive an object with a lot of information about the photos. Below is described what all information means.
+
+```js
+  image = {
+    alt_description:  ,           // Second description
+    blur_hash: ,                  // Hashed ID
+    categories: ,                 // Image categories
+    color: ,                      // Color ?
+    created_at: ,                 // Created timestamp
+    current_user_collections: [], // The current user collection
+    description: ,                // Image description
+    downloads: ,                  // Total downloads
+    exif: ,                       // Camera Settings
+    height: ,                     // Image height in PX
+    id: ,                         // Image ID
+    liked_by_user: ,              // Liked by user
+    likes: ,                      // Total likes
+    links: ,                      // Links to download information
+    location: ,                   // Location of image
+    meta: ,                       // Meta information
+    promoted_at: ,                // Promoted timestamp
+    related_collections: ,        // Related collections with this image
+    sponsorship: ,                // Sponsored image
+    tags: ,                       // Image tags
+    updated_at: ,                 // Updated timestamp
+    urls: {},                     // All image URLS, thumbs, small, regular, full, raw
+    user: ,                       // Information about user
+    views: ,                      // Total image views
+    width: ,                      // Image width in PX
+  }
+```
+
+---
+
 ## 🔍 **Sources**
 
-- npm: express-handlebars. (2021, February 16). Npm. https://www.npmjs.com/package/express-handlebars
+- npm: express-handlebars. (2021, February 16). Npm. Retrieved March 8, 2021, from https://www.npmjs.com/package/express-handlebars
+- Service Workers: an Introduction | Web Fundamentals. (n.d.). Google Developers. Retrieved March 15, 2021, from https://developers.google.com/web/fundamentals/primers/service-workers/
+- Bauer, D. (2020, August 19). Why npm Scripts? CSS-Tricks. Retrieved March 22, 2021, from https://css-tricks.com/why-npm-scripts/
 
-To make APA:
+  To make APA:
 
 - https://koderplace.com/code-samples/255/how-to-change-the-location-of-views-in-express-handlebars
 - https://docs.divio.com/en/latest/how-to/node-express-force-https/
-- ***
+-
+
+Retrieved February 15, 2021, from https
 
 ## 🔐 **License**
 
