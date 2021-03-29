@@ -201,16 +201,20 @@ In the end I started to get my score in lighthouse as high as possible. By runni
   git clone https://github.com/joordy/progressive-web-apps-2021.git
 ```
 
-### Navigate to the repository and nstall the packages
+### Navigate to the repository and install the packages
 
 ```bash
   npm install
 ```
 
+### Add .env file with API Keys.
+
+To make use of this application, you will need a API key from Unsplash. Check out the [.env.example file]() to see where you have to put the API key.
+
 ### Start local dev environment
 
 ```bash
- npm run dev && npm run watch
+ npm run dev
 ```
 
 ### Build export for deployment
