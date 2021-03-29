@@ -125,6 +125,8 @@
 
 .editorPage main div section:nth-of-type(3) article ul li {
   margin: 0.25em 0;
+  display: flex;
+  flex-direction: column;
 }
 /********* Popular images *********/
 
@@ -164,15 +166,10 @@
     max-height: 80vh;
   }
   .editorPage main div section:nth-of-type(2) img {
-    /* position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    max-height: 100%;
-    max-width: 100%;
-    width: auto;
-    margin: 0 auto; */
     width: 100%;
-    height: auto;
+    max-height: 100%;
+    margin: 0 auto;
+    object-fit: cover;
   }
 }
 
@@ -242,6 +239,7 @@
   }
 
   .editorPage main div section:nth-of-type(3) article ul li {
+    display: block;
     justify-content: start;
     align-items: flex-start;
     margin-bottom: 1em;
@@ -276,24 +274,24 @@
   right: 0;
   background-color: var(--uiBlue);
   border-radius: 12px 12px 0 0;
-  height: 150px;
+  height: 170px;
   box-shadow: 0px -5px 20px 19px rgb(255 255 255 / 10%),
     0 6px 20px 0 rgb(255 255 255 / 9%);
 }
 
 #allOptions.active button {
   position: absolute;
-  bottom: 1em;
+  bottom: 1.5em;
   width: 45%;
   padding: 0.75em 0;
   border-radius: 25px;
   background-color: #ec904c;
 }
 #allOptions.active button:first-of-type {
-  left: 1em;
+  left: 1.5em;
 }
 #allOptions.active button:last-of-type {
-  right: 1em;
+  right: 1.5em;
 }
 
 #allOptions.active div {
@@ -333,7 +331,7 @@
 #allOptions.active div details #slider {
   position: absolute;
   width: calc(100% - 2em);
-  bottom: 3.5em;
+  bottom: 4.25em;
   left: 1em;
   right: 1em;
   height: unset;
