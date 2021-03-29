@@ -79,6 +79,16 @@ A `manifest.json` is a file that passes information to the browser about your Pr
 
 A Service Worker ensures that you as a developer can manage / manipulate **network** traffic, **cache** files, add push **notifications**, and so on.
 
+In my service worker I use an **install**, **activation** and **fetch** function. These three functions ensure that the entire application can be used offline, if the user has visited it before. Because my API uses variable results, it will not work completely offline.
+
+The **install** function ensures that the service worker is installed in the browser, the static files I give in my variable `cacheFiles` are put in the cache memory of the browser. This is a one-time operation, if the browser has not yet detected a service worker.
+
+The **activation** function checks whether the files that I would like to cache in the cache memory of the browser already match. Duplicate files are also filtered out, so that the cache memory only ensures that files are only entered once.
+
+The **fetch** function provides multiple functionalities, including all visited pages are stored in the cache memory of the browser, under the name `html-runtime-cache`. All information of the pages already visited is stored here.
+
+When the user visits the web application offline, he will receive an offline page as a response. When the user has previously visited the application, the previously visited pages are loaded. If the user comes to a new page, which cannot yet be found in the cache memory of the browser, the offline page is still served to the user.
+
 </details>
 
 ### **Performance matters**
