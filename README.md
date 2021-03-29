@@ -6,7 +6,7 @@ In this course I'll learn how to create a Progressive Web Application from scrat
 
 ---
 
-![Wireframes](https://user-images.githubusercontent.com/48051912/112618251-3a1fdc00-8e26-11eb-88b3-67b009517ca5.png)
+![Wireframes](https://user-images.githubusercontent.com/48051912/112819657-1b6b5080-9085-11eb-83bc-bb272e6fac77.png)
 
 ## 🌐 **Live link**
 
@@ -209,7 +209,7 @@ In the end I started to get my score in lighthouse as high as possible. By runni
 
 ### Add .env file with API Keys.
 
-To make use of this application, you will need a API key from Unsplash. Check out the [.env.example file]() to see where you have to put the API key.
+To make use of this application, you will need a API key from Unsplash. Check out the [.env.example file](https://github.com/joordy/PhotoPaint-PWA/blob/master/.env.example) to see where you have to put the API key.
 
 ### Start local dev environment
 
@@ -276,16 +276,10 @@ After requesting the API you will receive an object with a lot of information ab
 ## 🔍 **Sources**
 
 - npm: express-handlebars. (2021, February 16). Npm. Retrieved March 8, 2021, from https://www.npmjs.com/package/express-handlebars
+- Harika. (n.d.). How to change the location of views in express handlebars. Https://Koderplace.Com. Retrieved March 9, 2021, from https://koderplace.com/code-samples/255/how-to-change-the-location-of-views-in-express-handlebars
 - Service Workers: an Introduction | Web Fundamentals. (n.d.). Google Developers. Retrieved March 15, 2021, from https://developers.google.com/web/fundamentals/primers/service-workers/
 - Bauer, D. (2020, August 19). Why npm Scripts? CSS-Tricks. Retrieved March 22, 2021, from https://css-tricks.com/why-npm-scripts/
-
-  To make APA:
-
-- https://koderplace.com/code-samples/255/how-to-change-the-location-of-views-in-express-handlebars
-- https://docs.divio.com/en/latest/how-to/node-express-force-https/
--
-
-Retrieved February 15, 2021, from https
+- divio. (n.d.). How to force HTTPS with Express.js - Developer Handbook Documentation. Https://Docs.Divio.Com/. Retrieved March 23, 2021, from https://docs.divio.com/en/latest/how-to/node-express-force-https/
 
 ## 🔐 **License**
 
