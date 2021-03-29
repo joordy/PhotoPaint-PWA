@@ -36,6 +36,12 @@
   line-height: 1;
 }
 
+a,
+button,
+input[type='submit'] {
+  cursor: pointer;
+}
+
 html {
   background: var(--uiBlack);
   color: var(--textCol);

@@ -6,7 +6,7 @@ In this course I'll learn how to create a Progressive Web Application from scrat
 
 ---
 
-![Wireframes](https://user-images.githubusercontent.com/48051912/112618251-3a1fdc00-8e26-11eb-88b3-67b009517ca5.png)
+![Wireframes](https://user-images.githubusercontent.com/48051912/112819657-1b6b5080-9085-11eb-83bc-bb272e6fac77.png)
 
 ## 🌐 **Live link**
 
@@ -142,25 +142,55 @@ In the end I started to get my score in lighthouse as high as possible. By runni
 
 </details>
 
-<!-- #### **Optimizing page with gzip**
+### **Folder structure**
 
-With the usage of the NPM package [compression](https://www.npmjs.com/package/compression) will it compress all the rendered files from the server. For example my CSS and JS bundles will be compressed and send to the client.
+<details style="margin: 1em 0;">
+  <summary style="margin: 1em 0;">Folder structure</summary>
 
-It gained small improvements on the home-page, but again a blazing fast render on the detail page.
+During the project I've spend a lot of time on creating a good folder structure. Personally, I like it when the code is clean, and seperated in a lot of modules to the code-files aren't that big. All the server files will be located in the `src` directory, and the client-side files inside the `public` folder.
 
-```js
-const compression = require('compression')
+```md
+src/
++-- renders/
+| +-- pages.js
++-- routes/
+| +-- router.js
++-- utils/
+| +-- fetch.js
+| +-- filter.js
++-- views/
+| +-- components/
+| | +-- editor/
+| | +-- error/
+| | +-- home/
+| | +-- profile/
+| +-- layouts/
+| | +-- main.hbs
+| +-- pages.hbs
 
-app.use(compression())
+public/
++-- css/
+| +-- pages/
+| | +-- .css
+| +-- index.css
++-- js/
+| +-- pages/
+| | +-- index.js
+| +-- utils/
+| | +-- components/
+| | +-- filters/
+| | +-- storage/
+| +-- script.js
++-- icons/
++-- service-worker.js
++-- manifest.json
+
+scripts/
++-- build_assets.js
++-- build_css.js
 ```
 
-![Optimizing page with gzip](https://user-images.githubusercontent.com/48051912/112613718-b0214480-8e20-11eb-9992-1318c0da3659.png)
-
-#### **Lighthouse audit optimizing result**
-
-In the end I started to get my score in lighthouse as high as possible. By running different tests and adjusting the feedback given, the score has improved little by little to the below.
-
-![Lighthouse audit](https://user-images.githubusercontent.com/48051912/112616907-9255de80-8e24-11eb-9397-370509f67448.png) -->
+</details>
 
 ---
 
@@ -209,7 +239,7 @@ In the end I started to get my score in lighthouse as high as possible. By runni
 
 ### Add .env file with API Keys.
 
-To make use of this application, you will need a API key from Unsplash. Check out the [.env.example file]() to see where you have to put the API key.
+To make use of this application, you will need a API key from Unsplash. Check out the [.env.example file](https://github.com/joordy/PhotoPaint-PWA/blob/master/.env.example) to see where you have to put the API key.
 
 ### Start local dev environment
 
@@ -276,16 +306,10 @@ After requesting the API you will receive an object with a lot of information ab
 ## 🔍 **Sources**
 
 - npm: express-handlebars. (2021, February 16). Npm. Retrieved March 8, 2021, from https://www.npmjs.com/package/express-handlebars
+- Harika. (n.d.). How to change the location of views in express handlebars. Https://Koderplace.Com. Retrieved March 9, 2021, from https://koderplace.com/code-samples/255/how-to-change-the-location-of-views-in-express-handlebars
 - Service Workers: an Introduction | Web Fundamentals. (n.d.). Google Developers. Retrieved March 15, 2021, from https://developers.google.com/web/fundamentals/primers/service-workers/
 - Bauer, D. (2020, August 19). Why npm Scripts? CSS-Tricks. Retrieved March 22, 2021, from https://css-tricks.com/why-npm-scripts/
-
-  To make APA:
-
-- https://koderplace.com/code-samples/255/how-to-change-the-location-of-views-in-express-handlebars
-- https://docs.divio.com/en/latest/how-to/node-express-force-https/
--
-
-Retrieved February 15, 2021, from https
+- divio. (n.d.). How to force HTTPS with Express.js - Developer Handbook Documentation. Https://Docs.Divio.Com/. Retrieved March 23, 2021, from https://docs.divio.com/en/latest/how-to/node-express-force-https/
 
 ## 🔐 **License**
 
