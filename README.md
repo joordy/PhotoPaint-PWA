@@ -142,25 +142,55 @@ In the end I started to get my score in lighthouse as high as possible. By runni
 
 </details>
 
-<!-- #### **Optimizing page with gzip**
+### **Folder structure**
 
-With the usage of the NPM package [compression](https://www.npmjs.com/package/compression) will it compress all the rendered files from the server. For example my CSS and JS bundles will be compressed and send to the client.
+<details style="margin: 1em 0;">
+  <summary style="margin: 1em 0;">Folder structure</summary>
 
-It gained small improvements on the home-page, but again a blazing fast render on the detail page.
+During the project I've spend a lot of time on creating a good folder structure. Personally, I like it when the code is clean, and seperated in a lot of modules to the code-files aren't that big. All the server files will be located in the `src` directory, and the client-side files inside the `public` folder.
 
-```js
-const compression = require('compression')
+```md
+src/
++-- renders/
+| +-- pages.js
++-- routes/
+| +-- router.js
++-- utils/
+| +-- fetch.js
+| +-- filter.js
++-- views/
+| +-- components/
+| | +-- editor/
+| | +-- error/
+| | +-- home/
+| | +-- profile/
+| +-- layouts/
+| | +-- main.hbs
+| +-- pages.hbs
 
-app.use(compression())
+public/
++-- css/
+| +-- pages/
+| | +-- .css
+| +-- index.css
++-- js/
+| +-- pages/
+| | +-- index.js
+| +-- utils/
+| | +-- components/
+| | +-- filters/
+| | +-- storage/
+| +-- script.js
++-- icons/
++-- service-worker.js
++-- manifest.json
+
+scripts/
++-- build_assets.js
++-- build_css.js
 ```
 
-![Optimizing page with gzip](https://user-images.githubusercontent.com/48051912/112613718-b0214480-8e20-11eb-9992-1318c0da3659.png)
-
-#### **Lighthouse audit optimizing result**
-
-In the end I started to get my score in lighthouse as high as possible. By running different tests and adjusting the feedback given, the score has improved little by little to the below.
-
-![Lighthouse audit](https://user-images.githubusercontent.com/48051912/112616907-9255de80-8e24-11eb-9397-370509f67448.png) -->
+</details>
 
 ---
 
