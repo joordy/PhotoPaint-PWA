@@ -6,7 +6,7 @@ const compression = require('compression')
 const expressHandlebars = require('express-handlebars')
 const router = require('./src/routes/router')
 const templates = path.join(__dirname, 'src/views')
-const port = process.env.PORT || 12345
+const port = process.env.PORT || 2222
 const hbs = expressHandlebars.create({
   defaultLayout: 'main',
   layoutsDir: path.join(__dirname, './src/views/layouts'),
