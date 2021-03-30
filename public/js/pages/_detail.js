@@ -44,10 +44,4 @@ export const Detail = () => {
       optionBtn.innerHTML = 'Options'
     }
   })
-
-  // // Event for Edit button, to open edit popup
-  // const editBtn = document.querySelector('#editBtn')
-  // editBtn.addEventListener('click', (event) => {
-  //   article.classList.toggle('active')
-  // })
 }
