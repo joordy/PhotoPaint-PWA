@@ -80,6 +80,8 @@ export const addFilter = () => {
   const downBtn = document.querySelector('#downBtn')
   downBtn.addEventListener('click', (event) => {
     popUp('Image downloading.')
+
+    download()
   })
 }
 
@@ -105,4 +107,24 @@ const popUp = (popupText) => {
     const backblur = document.querySelector('#backblur')
     backblur.remove()
   })
+}
+
+const download = async () => {
+  const selectedImg = document.querySelector('#selectedImg')
+  const a = document.createElement('a')
+  a.href = await toDataURL(selectedImg.src)
+  a.download = ''
+  document.body.appendChild(a)
+  a.click()
+  document.body.removeChild(a)
+}
+
+const toDataURL = (url) => {
+  return fetch(url)
+    .then((response) => {
+      return response.blob()
+    })
+    .then((blob) => {
+      return URL.createObjectURL(blob)
+    })
 }

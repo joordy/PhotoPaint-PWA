@@ -103,7 +103,16 @@ div#internetPopup {
 .header div {
   width: 100%;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.header div aside:last-of-type {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .header a {
   color: var(--uiWhite);
   text-decoration: none;
